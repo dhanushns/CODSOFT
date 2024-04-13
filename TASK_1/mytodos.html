@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todos</title>
+    <link rel="stylesheet" href="assest/style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="displayUsername()">
+    <div class="modal">
+        <!-- Side Nav Bar -->
+        <div class="modal-side-bar" id="side-bar">
+            <div class="side-nav-content" id="content-show">
+                <div class="header-name">
+                    <i class='fa fa-user-o' id="user"></i>
+                    <input type="text" class="text-wrapper username" name="getUsername" id="displayUsername" value=""
+                        disabled>
+                </div>
+                <div class="sections">
+                    <div class="group sec-1" onclick="toggleGlobalAddTask(1)">
+                        <i class="fa fa-plus-square" aria-hidden="true"><span>Add
+                                task</span></i>
+                    </div>
+                    <div class="group sec-2" onclick="toggleGlobalAddSection(1)">
+                        <i class="fa fa-plus-square" aria-hidden="true"><span>Add
+                                section</span></i>
+                    </div>
+                    <div class="group sec-3">
+                        <i class="fa fa-check-square" aria-hidden="true" onclick="toggleCompletedTask()"><span>Completed
+                                task</span></i>
+                    </div>
+
+                    <!-- Completed Drop Down -->
+                    <div class="drop-down sec-4" id="toggel-sec4">
+                    </div>
+                    <!-- Completed Drop Down ends here -->
+
+
+                    <div class="group sec-3">
+                        <i class="fa fa-dot-circle-o" aria-hidden="true" onclick="toggleOnBoardTask()"><span>On
+                                Board History</span></i>
+                    </div>
+
+
+                    <!-- OnBoard Drop Down -->
+                    <div class="drop-down sec-5" id="toggel-sec5">
+                    </div>
+                    <!-- Onboard dropdown ends here -->
+
+
+                </div>
+                <span><a id = "logout" href = "\CODSOFT\TASK_1\index.html">Logout</a></span>
+            </div>
+            <div class="btn-nav">
+                <i class="fa fa-angle-double-left" aria-hidden="true" id="side-nav-btn" onclick="handleSideNav()"></i>
+            </div>
+        </div>
+        <!-- Side navbar ends here -->
+
+        <!-- main -->
+        <div class="onboard">
+            <div class="header">
+                <div class="text-wrapper top-title">My todo's /</div>
+            </div>
+            <div class="onboard-body">
+
+                <!-- onboard content -->
+                <div class="onboard-content" id="add-sections">
+
+
+                    <!-- New Section -->
+                    <div id="section1" class="sections">
+
+                        <!-- Section Header -->
+                        <div class="content-header">
+                            <input type="text" name="section" value="Home" id="section-title1" class="section-title"
+                                onchange="handleSectionChange(event)
+                            ">
+                        </div>
+                        <!-- Section Header ends here -->
+
+                        <!-- onboard tasks -->
+                        <div class="onboard-tasks" id="onboard-add-task">
+
+                            <!-- Section tasks -->
+                            <div id="add-task-div1" class="section-tasks"></div>
+                            <!-- Section tasks ends here -->
+
+
+                            <!-- Add task block -->
+                            <i class="fa fa-plus" aria-hidden="true" class="add-task" id="add-task1"
+                                onclick="displayAddTask(event,1)"><span id="1">Add
+                                    task</span></i>
+                            <!-- Add task block ends here -->
+
+
+                            <!-- Task info  -->
+                            <div class="task-info" id="display-add-task1">
+                                <input type="text" class="task-name" id="task-name1" placeholder="Task name"
+                                    name="task-name" required>
+                                <input type="text" class="task-description" id="task-description1"
+                                    name="task-description" placeholder="Description">
+                                <div class="task-info-footer">
+                                    <div class="r-btn">
+                                        <button id="1" class="cancel-btn"
+                                            onclick="displayAddTask(event,0)">Cancel</button>
+                                        <button id="1" type="submit" class="add-btn" onclick="addTask(event,1)">Add
+                                            task</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- task info ends here -->
+
+                        </div>
+                        <!-- onboard tasks ends here -->
+
+                    </div>
+                    <!-- New Section ends here -->
+
+                </div>
+                <!-- onboard ends here content -->
+
+
+                <!-- Add section -->
+                <div class="div-add-section">
+                    <div class="hover-add-section text-wrapper" id="addSectionHover" onclick="displayAddSecition(1)">Add
+                        section</div>
+                </div>
+                <!-- Add section ends here -->
+
+
+                <!-- New Secition -->
+                <div class="section-info" id="display-add-section">
+                    <div id="section-form">
+                        <input type="text" id="section-name" placeholder="Name this section" name="section-name"
+                            required>
+                        <div class="l-btn">
+                            <button type="submit" id="section-add-btn" onclick="addSection(1)">Add section</button>
+                            <button id="section-cancel-btn" onclick="displayAddSecition(0)">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- New Section ends here -->
+            </div>
+
+
+            <!-- Update task -->
+            <div class="task-info absolute-position" id="display-absolute-position-update">
+                <input type="text" id="update-task-name" placeholder="Task name" name="task-name" required>
+                <input type="text" id="update-task-description" name="task-description" placeholder="Description">
+                <div class="task-info-footer">
+                    <div class="r-btn global">
+                        <button id="cancel-btn" onclick="toggleUpdateTask(0)">Cancel</button>
+                        <button type="submit" class="add-btn" onclick="updateTask()">Update task</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Update task ends here -->
+
+
+            <!-- Global Add task -->
+            <div class="task-info absolute-position-global" id="display-absolute-position-add">
+                <input type="text" id="absolute-task-name" placeholder="Task name" name="task-name" required>
+                <input type="text" id="absolute-task-description" name="task-description" placeholder="Description">
+                <div class="task-info-footer">
+                    <select id="section-list">
+                        <option id="1">Home</option>
+                    </select>
+                    <div class="r-btn">
+                        <button id="cancel-btn" onclick="toggleGlobalAddTask(0)">Cancel</button>
+                        <button type="submit" class="add-btn" onclick="addTask(event,2)">Add task</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Global add task ends here -->
+
+
+            <!-- Global add section -->
+            <div class="global-section-info" id="display-global-add-section">
+                <div id="section-form">
+                    <input type="text" id="global-section-name" placeholder="Section Name" name="section-name" required>
+                    <div class="l-btn">
+                        <button type="submit" id="section-add-btn" onclick="addSection(2)">Add section</button>
+                        <button id="section-cancel-btn" onclick="toggleGlobalAddSection(0)">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Global add section ends here -->
+
+        </div>
+    </div>
+</body>
+
+</html>
