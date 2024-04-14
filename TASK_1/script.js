@@ -65,7 +65,7 @@ function handleSectionChange (event) {
   var sectionId = event.target.id
   var sectionName = event.target.value
   if (sectionName === '') {
-    alert('Sections should conatin title')
+    alert('Sections should contain title')
     var list = document.getElementById('section-list')
     var selectedSection
     var temp = 0
