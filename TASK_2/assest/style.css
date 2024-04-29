@@ -1,0 +1,287 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+/* Root variables */
+:root {
+    --second-hand-angle-start: 0deg;
+    --second-hand-angle-end: 0deg;
+    --minute-hand-angle-start: 0deg;
+    --minute-hand-angle-end: 0deg;
+    --hour-hand-angle-start: 0deg;
+    --hour-hand-angle-end: 0deg;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(224, 219, 219);
+    text-align: center;
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.title {
+    color: #000;
+    font-size: 3em;
+    margin-top: 50px;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 350px;
+    margin: 100px auto 0 auto;
+    padding: 10px;
+
+    .modal-content {
+        display: flex;
+        position: relative;
+        height: 300px;
+        width: 650px;
+        background-color: #f6f6e9;
+        border-radius: 200px;
+        transition: all 0.8s ease;
+        box-shadow: inset 10px 5px 10px 10px rgba(0, 0, 0, .2);
+        z-index: 5;
+
+        .modal-header {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 50px 50px 0 80px;
+            height: 100px;
+            gap: 15px;
+            transition: all 0.8s ease;
+
+            h1 {
+                margin: 0;
+                width: max-content;
+                height: max-content;
+            }
+        }
+
+        hr {
+            width: 90%;
+            opacity: 0.4;
+        }
+
+        .display-time {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap:5px;
+            font-weight: bold;
+            font-size: 3em;
+            text-align: left;
+            padding-left: 80px;
+            padding-top: 25px;
+            font-family: "Comfortaa", sans-serif;
+            transition: all 0.8s ease;
+        }
+
+        .meridian{
+            position: absolute;
+            right: -15px;
+            align-self: flex-end;
+            font-size: 0.5em;
+            transition: all 0.8s ease;
+        }
+
+        .col-2 {
+            align-self: center;
+            margin-left: 30px;
+            border-radius: 50%;
+
+            .circle {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-color: #f6f6e9;
+                border: 5px solid #000;
+                box-shadow: inset 10px 5px 10px 10px rgba(0, 0, 0, .2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.8s ease;
+
+                .center-dot {
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: red;
+                    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
+                }
+
+                .hour-hand {
+                    width: 3px;
+                    height: 32%;
+                    animation: hour-tick 10s infinite linear;
+                }
+
+                .min-hand {
+                    width: 3px;
+                    height: 40%;
+                    animation: minute-tick 10s infinite linear;
+                }
+
+                .sec-hand {
+                    width: 3px;
+                    height: 45%;
+                    animation: second-tick 10s infinite linear;
+                }
+
+                .hour-hand,
+                .min-hand,
+                .sec-hand {
+                    position: absolute;
+                    bottom: 50%;
+                    background-color: #03bcf4;
+                    transform-origin: bottom;
+                    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .2);
+                    border-radius: 10px;
+                    transition: all 0.8s ease;
+                }
+            }
+        }
+    }
+
+    .modal-border {
+        position: absolute;
+        height: 300px;
+        width: 650px;
+        background-color: transparent;
+        border-radius: 200px;
+        border: 5px solid #000;
+        opacity: 1;
+        z-index: 10;
+        transition: all 0.8s ease;
+    }
+
+    /* Border fot Digital Times */
+    .modal-content::after {
+        content: "";
+        position: absolute;
+        height: 250px;
+        width: 775px;
+        top: 90px;
+        left: -175px;
+        border-radius: 200px;
+        border: 5px solid #000;
+        opacity: 0;
+        box-shadow: inset 10px 5px 10px 10px rgba(0, 0, 0, .2);
+    }
+}
+
+
+/* Hover Animations */
+
+.modal:hover .modal-border {
+    transition: all 0.8s ease;
+    transform: skew(-5deg, -5deg) scale(1.58);
+    box-shadow: inset 10px 5px 10px 10px rgba(0, 0, 0, .1);
+    opacity: 1;
+}
+
+.modal:hover .modal-content {
+    transition: all 0.8s ease;
+    transform: skew(-5deg, -5deg) scale(1.5);
+    box-shadow: inset 10px 5px 10px 10px rgba(0, 0, 0, .2);
+    opacity: 1;
+    border: none;
+}
+
+.modal:hover .modal-header {
+    transform: scale(1.2);
+    transition: all 0.8s ease;
+    padding-left: 100px;
+    text-shadow: 10px 5px 5px rgba(0, 0, 0, .3);
+}
+
+.modal:hover .display-time {
+    transform: scale(1.2);
+    transition: all 0.8s ease;
+    padding-left: 100px;
+    text-shadow: 10px 5px 5px rgba(0, 0, 0, .3);
+}
+
+.modal:hover .modal-content::after {
+    opacity: 1;
+    transform: scale(0.4);
+    transition: all 0.8s ease;
+}
+
+.modal:hover .col-2 {
+    box-shadow: 10px 5px 10px 10px rgba(0, 0, 0, .2);
+    margin-left: 25px;
+    transition: all 0.8s ease;
+}
+
+.modal:hover .circle {
+    transform: scale(1.2);
+    transition: all 0.8s ease;
+}
+
+.modal:hover .hour-hand {
+    transform: scale(1.2);
+    transition: all 0.8s ease;
+}
+
+.modal:hover .min-hand {
+    transform: scale(1.2);
+    transition: all 0.8s ease;
+}
+
+.modal:hover .sec-hand {
+    transform: scale(1.5);
+    transition: all 0.8s ease;
+}
+
+.modal:hover .center-dot {
+    transform: scale(1.2);
+    transition: all 0.8s ease;
+}
+
+.modal:hover .meridian{
+    transform: skew(-5deg, -5deg) translate(-10px,30px);
+    transition: all 0.8s ease;
+}
+
+/* Analog Clock Hands Animations */
+
+@keyframes second-tick {
+    0% {
+        transform: rotate(var(--second-hand-angle-start));
+    }
+
+    100% {
+        transform: rotate(var(--second-hand-angle-start));
+    }
+}
+
+@keyframes minute-tick {
+    0% {
+        transform: rotate(var(--minute-hand-angle-start));
+    }
+
+    100% {
+        transform: rotate(var(--minute-hand-angle-start));
+    }
+}
+
+@keyframes hour-tick {
+    0% {
+        transform: rotate(var(--hour-hand-angle-start));
+    }
+
+    100% {
+        transform: rotate(var(--hour-hand-angle-start));
+    }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digita Clock</title>
+    <link rel="stylesheet" href="assest/style.css">
+    <script src="./script.js"></script>
+</head>
+
+<body>
+    <!-- Document Title -->
+    <h1 class="title">Digital Clock</h1>
+
+    <!-- Digital Clock Modal Starts Here -->
+    <div class="modal">
+
+        <!-- Modal Border starts here -->
+        <div class="modal-border"></div>
+        <!-- Modal Border Ends here -->
+
+        <!-- Modal content starts here -->
+        <div class="modal-content">
+
+            <!-- Column 1 DAY MOTH YEAR AND DATE -->
+            <div class="col-1">
+                <div class="modal-header">
+                    <h1 id="day"></h1>
+                    <h1 id="date-month-year"></h1>
+                </div>
+
+                <!-- Space Divisor -->
+                <hr>
+
+                <!-- Display Current Time -->
+                <div class="display-time">
+                    <div class="time" id="set-time"></div>
+                    <div class="meridian" id ="set-meridian"></div>
+                </div>
+                <!-- Display Current Time -->
+
+            </div>
+            <!-- Colunmn 1 ends here -->
+
+            <!-- Column 2 starts here Analog Clock -->
+            <div class="col-2">
+
+                <!-- Analog clock -->
+                <div class="circle">
+                    <div class="hour-hand" id="hr-hand"></div>
+                    <div class="min-hand" id="min-hand"></div>
+                    <div class="sec-hand" id="sec-hand"></div>
+                    <div class="center-dot"></div>
+                </div>
+                <!-- Analog clock -->
+
+            </div>
+            <!-- Column 2 ends here -->
+
+        </div>
+        <!-- Modal content ends here -->
+
+    </div>
+    <!-- Digital Clock Modal Ends here -->
+</body>
+
+</html>
