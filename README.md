@@ -20,14 +20,33 @@ At the beginning of the development process, I had no predefined design or funct
 - CSS3
 - JavaScript (ES6+)
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Digital Clock with Analog Clock Component
+
+This project is a digital clock that displays the current time, date, month, and year. Additionally, it includes an analog clock component that updates in real-time and features smooth hover animations.
+
+## Features:
+  Digital Clock: Displays the current time in hours, minutes, and seconds.
+  Date: Shows the current date, month, and year.
+  Analog Clock: Provides a visual representation of the current time with hour, minute, and second hands.
+  Real-Time Update: The analog clock component updates in real-time to reflect the current time.
+  Smooth Hover Animations: The analog clock component features smooth hover animations for enhanced user experience.
+
+## Technologies Used:
+  HTML5
+  CSS3
+  JavaScript
+
+## Screenshots
+![image](https://github.com/dhanushns/CODSOFT/assets/92561084/4d862349-c9d0-493b-b998-bdadafc905e9)
+![image](https://github.com/dhanushns/CODSOFT/assets/92561084/d923d208-049a-4c1a-8e5d-ab8ce0ab111c)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Contributing:
 Contributions are welcome! If you have any suggestions, bug fixes, or enhancements, feel free to open an issue or submit a pull request.
 
-## License:
-This project is under the sole copyright of Dhanush. All rights reserved.
-
 ## Acknowledgments:
 - Thanks to Codsoft for providing me with the opportunity to work on this project and develop my skills as a JavaScript developer.
-- Special thanks to the Todoist website for inspiring the design and functionalities of this project.
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- Special thanks to the Todoist website for inspiring the design and functionalities of the to-do list project.
