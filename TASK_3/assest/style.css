@@ -352,7 +352,6 @@ body {
     flex-direction: column;
     width: 100%;
     transition: all 1s ease;
-    margin-top: 50px;
 
     .row-1 {
         padding-bottom: 40px;
@@ -439,7 +438,8 @@ body {
     .row-1 {
         padding: 20px;
         margin-top: 60px;
-        .text-wrapper{
+
+        .text-wrapper {
             position: relative;
         }
     }
@@ -1204,10 +1204,10 @@ body {
     animation-delay: 1.8s;
 }
 
-.title-animate{
+.title-animate {
     width: max-content;
     margin-inline: auto;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }
 
 .title-animate::before {
@@ -1220,7 +1220,8 @@ body {
     border: 2px solid transparent;
     transition: all 0.5s ease;
 }
-.title-animate::after{
+
+.title-animate::after {
     content: " ";
     position: absolute;
     width: 100%;
@@ -1230,6 +1231,7 @@ body {
     border: 2px solid transparent;
     transition: all 0.5s ease;
 }
+
 .title-animate.in-view.text-wrapper::before,
 .title-animate.in-view.text-wrapper::after {
     border: 2px solid rgb(237, 131, 55);
@@ -1239,10 +1241,11 @@ body {
 
 
 @keyframes title-show {
-    from{
+    from {
         width: 0;
     }
-    to{
+
+    to {
         width: 100%;
     }
 }
@@ -1430,7 +1433,9 @@ body {
 @media screen and (max-width:780px) {
 
     .about-me-container {
-        margin-top: 50px;
+        .row-1 {
+            margin-top: 0;
+        }
 
         .row-2 {
             .text-wrapper {
@@ -1544,5 +1549,27 @@ body {
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .top-nav .navs .child-1.in-view {
+        animation: none;
+    }
+
+    .top-nav .navs .child-2.in-view {
+        animation: none;
+    }
+
+    .profile-img .image-div .img-box.in-view {
+        animation: none;
+    }
+
+    .about-me-animate.in-view {
+        animation: none;
+    }
+
+    .card.in-view {
+        animation: none;
     }
 }
