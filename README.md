@@ -44,6 +44,31 @@ This project is a digital clock that displays the current time, date, month, and
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# Portfolio
+
+This is my portfolio project, showcasing my skills, experiences, and projects.
+
+## Overview
+
+This portfolio project serves as a platform to present my skills, experiences, and projects to potential employers, collaborators, and clients. It provides a glimpse into my background, expertise, and accomplishments, allowing visitors to get to know me professionally.
+
+## Features
+
+- **About Me:** Provides a brief overview of my background, interests, and aspirations.
+- **Experience:** Highlights my professional experiences, roles, and responsibilities.
+- **Skills:** Lists my technical skills and areas of expertise.
+- **Projects:** Showcases my portfolio of projects, including descriptions and links.
+- **Contact Me:** Offers ways to get in touch with me, such as email, LinkedIn, and GitHub.
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ## Contributing:
 Contributions are welcome! If you have any suggestions, bug fixes, or enhancements, feel free to open an issue or submit a pull request.
 
